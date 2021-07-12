@@ -3,7 +3,7 @@
     <head>
         <title>Rock Paper Scissors</title>
         <meta charset="utf8">
-        <link rel="script" href="script/rps.js">
+        <script src="script/rps.js"></script>
         <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
@@ -11,12 +11,13 @@
             <h1>Rock Paper Scissors Lizard Spock</h1>
         </header>
         <content>
+            <h3 id="game-status">You - 0  Computer - 0</h3>
             <div class="button-wrapper">
-                <div class="button" id="rock">Rock</div>
-                <div class="button" id="paper">Paper</div>
-                <div class="button" id="scissors">Scissors</div>
-                <div class="button" id="lizard">Lizard</div>
-                <div class="button" id="Spock">Spock</div>
+                <div class="button" id="rock" onclick='playerTurn(0)'>Rock</div>
+                <div class="button" id="paper" onclick='playerTurn(1)'>Paper</div>
+                <div class="button" id="scissors" onclick='playerTurn(2)'>Scissors</div>
+                <div class="button" id="lizard" onclick='playerTurn(3)'>Lizard</div>
+                <div class="button" id="Spock" onclick='playerTurn(4)'>Spock</div>
             </div>
         </content>
     </body>
