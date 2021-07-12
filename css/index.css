@@ -1,0 +1,23 @@
+html {
+    background-color: #261447;
+}
+
+h1 {
+    text-align: center;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.button {
+    background-color: #CC978E;
+    border: 1px solid black;
+    margin: 2em;
+    height: 4em;
+    width: 4em;
+    padding: 2em;
+    text-align: center;
+}
