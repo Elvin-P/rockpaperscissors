@@ -2,6 +2,7 @@ let numTurns = 0;
 let playerWins = 0;
 let computerWins = 0;
 let message;
+let message1;
 
 const Choices = {
     0: 'rock',
@@ -19,29 +20,38 @@ const rules = [
     [1, -1, 1, -1, 0]
 ]
 
-let computerTurn = () => {
+const computerTurn = () => {
     return Math.floor(Math.random() * 5);
 }
 
-let playerTurn = (playerChoice) => {
+const playerTurn = (playerChoice) => {
     if (message === undefined)
-        message = document.querySelector("#game-status");
-    if (numTurns>= 5) return;
+        message = document.querySelector("#score");
+        message1 = document.querySelector("#turn");
+    if (playerWins >= 5) {
+        message.innerText = "You win the game!";
+        return;
+    }
+    if (computerWins >= 5) {
+        message.innerText = "You lose the game!";
+        return;
+    }
+
     let computerChoice = computerTurn();
+
     let result = rules[playerChoice][computerChoice];
-    console.log(Choices[computerChoice]);
     if (result == 0) {
         message.innerText = `You - ${playerWins}  Computer - ${computerWins}`;
-        console.log('Nobody wins');
+        message1.innerText = "Tie!";
     } 
     else if (result == 1) {
         message.innerText = `You - ${++playerWins}  Computer - ${computerWins}`;
-        console.log('You win this round');
+        message1.innerText = "You win this round!";
         numTurns++;
     }
     else {
         message.innerText = `You - ${playerWins}  Computer - ${++computerWins}`;
-        console.log('You lose this round');
+        message1.innerText = "You lose this round!";
         numTurns++;
     }
 }
